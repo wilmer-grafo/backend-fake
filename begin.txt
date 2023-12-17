@@ -1,0 +1,5 @@
+npm init -y
+npm i json-server
+create db.json and set the format
+create "server": "json-server --watch db.json --port 8090"
+npm run server
