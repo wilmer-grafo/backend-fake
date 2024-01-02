@@ -1,4 +1,4 @@
-package bo.gob.segip.micro_servicios.controller;
+package bo.gob.segip.micro_servicios.controllers;
 
 import bo.gob.segip.micro_servicios.dao.CityDAO;
 import bo.gob.segip.micro_servicios.model.City;

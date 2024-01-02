@@ -1,0 +1,9 @@
+http://localhost:9090/api/users/
+
+{
+    "name": "Wilmer",
+    "email": "black@gmail.com",
+    "password": "nomentir",
+    "about": "Soy un jugador de dota"
+}
+
