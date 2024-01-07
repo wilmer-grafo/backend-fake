@@ -3,6 +3,7 @@ package bo.gob.segip.micro_servicios.exceptions;
 import bo.gob.segip.micro_servicios.payloads.ApiResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -35,6 +36,29 @@ public class GlobalExceptionHandler {
         });
 
         return new ResponseEntity<>(errorResp, HttpStatus.BAD_REQUEST);
+
+    }
+
+//    @ExceptionHandler(UsernameNotFoundException.class)
+//    public ResponseEntity<ApiResponse> handleUsernameNotFoundException (UsernameNotFoundException ex) {
+//
+//        Map<String, String> errorResp = new HashMap<>();
+//
+//
+//        String message = ex.getMessage();
+//        ApiResponse apiResponse = new ApiResponse(message, false);
+//
+//        return new ResponseEntity<>(apiResponse, HttpStatus.FORBIDDEN);
+//
+//    }
+
+    @ExceptionHandler(BadCredentialsException.class)
+    public ResponseEntity<ApiResponse> handleUsernameNotFoundException (BadCredentialsException ex) {
+
+        String message = ex.getMessage();
+        ApiResponse apiResponse = new ApiResponse(message, false);
+
+        return new ResponseEntity<>(apiResponse, HttpStatus.FORBIDDEN);
 
     }
 
